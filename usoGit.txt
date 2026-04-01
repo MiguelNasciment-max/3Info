@@ -1,0 +1,10 @@
+como inicializar o git em uma pasta:
+git init
+como vincular um projeto a um repositório no github:
+git remote add origin https://github.com/MiguelNasciment-max/3Info.git
+como adicionar todos os arquivos ao repositório:
+git add .
+como settar a branch de um repositório:
+git branch -M main 
+como versionar o projeto pelo commit:
+git commit -m "primeiro commit" 
