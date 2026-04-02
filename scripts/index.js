@@ -4,12 +4,24 @@ function enviarInsta(event){
     const nome = document.getElementById('nome').value
     const mensagem = document.getElementById('mensagem').value
 
+    // Validação simples para não enviar vazio
+    if (!nome || !mensagem) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+    }
+
     const texto = `Olá me chamo ${nome}, ${mensagem}`
 
-    navigator.clipboard.writeText(texto)
-
-    window.open("https://instagram.com/terceiro.info26", "_blank")
-
+    // Copia o texto formatado para a área de transferência
+    navigator.clipboard.writeText(texto).then(() => {
+        // Alerta visual para o usuário saber que deve colar a mensagem
+        alert("Mensagem copiada! Vamos te levar ao chat, basta colar (Ctrl+V) e enviar.");
+        
+        // Abre diretamente o chat (Direct) do Instagram
+        window.open("https://ig.me/m/terceiro.info26", "_blank");
+    }).catch(err => {
+        console.error("Erro ao copiar: ", err);
+    });
 }
 
 function doar(event){
