@@ -126,6 +126,84 @@ h1{
     font-size: 1.2rem;
 }
 
+#toast-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.toast {
+    background: rgba(25, 25, 25, 0.95);
+    backdrop-filter: blur(10px);
+    border-left: 4px solid #ff0026; /* Cor padrão */
+    color: #e2e2e2;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    min-width: 280px;
+    max-width: 450px;
+    transform: translateX(120%);
+    animation: slideIn 0.5s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toast.sucesso { 
+    border-left-color: #00ff88; 
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.15); 
+}
+.toast.erro { 
+    border-left-color: #ff0026; 
+    box-shadow: 0 5px 20px rgba(255, 0, 38, 0.2); 
+}
+
+.toast.esconder {
+    animation: slideOut 0.5s forwards ease-in;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(120%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(120%); opacity: 0; }
+}
+
+@media (max-width: 480px) {
+    #toast-container {
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        width: 90%;
+    }
+    .toast {
+        min-width: 100%;
+        font-size: 1rem;
+        transform: translateY(120%);
+        animation: slideInMobile 0.5s forwards;
+    }
+    .toast.esconder {
+        animation: slideOutMobile 0.5s forwards;
+    }
+
+    @keyframes slideInMobile {
+        from { transform: translateY(120%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideOutMobile {
+        from { transform: translateY(0); opacity: 1; }
+        to { transform: translateY(120%); opacity: 0; }
+    }
+}
+
 .galeria{
     padding: 6rem, 2rem ;
     padding-top: 200px;

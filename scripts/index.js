@@ -1,41 +1,62 @@
+function mostrarPopup(mensagem, tipo = 'erro') {
+    // Procura o container, se não existir, cria dinamicamente
+    let container = document.getElementById('toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toast-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = `toast ${tipo}`;
+    toast.innerHTML = `<span>${mensagem}</span>`;
+
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.add('esconder');
+        toast.addEventListener('animationend', () => {
+            toast.remove();
+        });
+    }, 4500);
+}
+
 function enviarInsta(event){
-    event.preventDefault()
+    event.preventDefault();
 
-    const nome = document.getElementById('nome').value
-    const mensagem = document.getElementById('mensagem').value
+    const nome = document.getElementById('nome').value;
+    const mensagem = document.getElementById('mensagem').value;
 
-    // Validação simples para não enviar vazio
     if (!nome || !mensagem) {
-        alert("Por favor, preencha todos os campos.");
+        mostrarPopup("Por favor, preencha todos os campos antes de enviar.", "erro");
         return;
     }
 
-    const texto = `Olá me chamo ${nome}, ${mensagem}`
+    const texto = `Olá, me chamo ${nome}. ${mensagem}`;
 
-    // Copia o texto formatado para a área de transferência
     navigator.clipboard.writeText(texto).then(() => {
-        // Alerta visual para o usuário saber que deve colar a mensagem
-        alert("Mensagem copiada! Vamos te levar ao chat, basta colar (Ctrl+V) e enviar.");
+        mostrarPopup("Mensagem copiada! Cole em nosso direct 😎.", "sucesso");
         
-        // Abre diretamente o chat (Direct) do Instagram
-        window.open("https://ig.me/m/terceiro.info26", "_blank");
+        setTimeout(() => {
+            window.open("https://ig.me/m/terceiro.info26", "_blank");
+        }, 1000);
     }).catch(err => {
         console.error("Erro ao copiar: ", err);
+        mostrarPopup("Não foi possível copiar a mensagem.", "erro");
     });
 }
 
 function doar(event){
-    event.preventDefault()
+    event.preventDefault();
 
-    const chavePix = "3infonet2026@gmail.com" 
+    const chavePix = "3infonet2026@gmail.com"; 
 
-    let texto = `${chavePix}`
-
-
-
-    navigator.clipboard.writeText(texto)
-
-    alert("Chave Pix copiada! Muito Obrigado pela doação🙌")
+    navigator.clipboard.writeText(chavePix).then(() => {
+        mostrarPopup("Chave Pix copiada! Obrigado por ajudar o Terceirão 😎", "sucesso");
+    }).catch(err => {
+        console.error("Erro ao copiar: ", err);
+        mostrarPopup("Erro ao copiar a chave Pix.", "erro");
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
