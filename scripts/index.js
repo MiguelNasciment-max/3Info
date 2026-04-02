@@ -92,7 +92,7 @@ function animarDigitacao() {
     } 
     else if (apagando && caractereIndex === 0) {
         apagando = false;
-        fraseIndex = (fraseIndex + 1) % frases.length; // Passa para a próxima frase
+        fraseIndex = (fraseIndex + 1) % frases.length; 
         velocidade = 500;
     }
 
