@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terceirão Infonet</title>
+    <link rel="icon" type="image/png" href="img/Bandeira.png">
+    <link rel="stylesheet" href="estilo/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <!-- tableIcons: https://tabler.io -->
+</head>
+
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+
+
+            <li>
+                <a href="#inicio" class="menu-link">Home</a>
+            </li>
+
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+
+            <li>
+                <a href="#galeria" class="menu-link">Fotos</a>
+            </li>
+
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+
+            <li>
+                <a href="#confra" class="menu-link">Doação</a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+
+    <main id="inicio" class="cabecalho">
+        <img src="img/Bandeira.png" alt="3info" class="terceirao-perfil">
+        <h1 id="maquina-escrever"></h1>
+        <p class="cabecalho-sub-titulo">2024-2026</p>
+    </main>
+    <section id="sobre" class="sobre">
+
+        <h2 class="sobre-titulo">QUEM SOMOS?</h2>
+
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo"> Somos a 4° turma do Curso de Informática para Internet da Etec de Santa Fé do
+                Sul. Carregamos o peso de ser a melhor sala dessa instituição, e esse ano iremos nos formar. </p>
+
+            <p class="sobre-paragrafo"> Esse web site tem o intuito de expandirmos nossa fama como os melhores, veja
+                nossos videos, interaja com a gente, venha acompanhar com a gente esse último ano nosso na ETEC.</p>
+        </div>
+
+    </section>
+
+    <section id="galeria" class="galeria">
+        <h2 class="galeria-titulos">FOTOS</h2>
+        <div class="galeria-caixas">
+
+            <div class="galeria-card">
+                <img src="img/DSC04894.JPG" alt="galeria 1" class="galeria-imagem">
+                <div class="caixa-textos-galeria">
+                    <h3 class="info-galeria">Pega essa Burla 😎</h3>
+                    <p class="paragrafo-galeria">Como assim não pode celular? Então vamos usar a camêra </p>
+                </div>
+            </div>
+
+            <div class="galeria-card">
+                <img src="img/Fardas.jpeg" alt="galeria 2" class="galeria-imagem">
+                <div class="caixa-textos-galeria">
+                    <h3 class="info-galeria">A Elite 🥶</h3>
+                    <p class="paragrafo-galeria">O dia em que recebemos as camisas que ficariam para a história</p>
+                </div>
+            </div>
+
+            <div class="galeria-card">
+                <img src="img/Eferson 1.jpeg" alt="galeria 3" class="galeria-imagem">
+                <div class="caixa-textos-galeria">
+                    <h3 class="info-galeria">Quadrooou 🤘</h3>
+                    <p class="paragrafo-galeria">Saudades do melhor Professor de Educação Física do mundo. Eferson você
+                        é o melhor!</p>
+                </div>
+            </div>
+
+            <div class="galeria-card">
+                <img src="img/DSC05016.JPG" alt="galeria 4" class="galeria-imagem">
+                <div class="caixa-textos-galeria">
+                    <h3 class="info-galeria">Representante no FUT ⚽</h3>
+                    <p class="paragrafo-galeria">Nosso incrivél representante representando</p>
+                </div>
+            </div>
+
+            <div class="galeria-card">
+                <img src="img/DSC05034.JPG" alt="galeria 5" class="galeria-imagem">
+                <div class="caixa-textos-galeria">
+                    <h3 class="info-galeria"> ✋🧐🤚</h3>
+                    <p class="paragrafo-galeria">Essa cena do Cauã é simplesmente cinema</p>
+                </div>
+            </div>
+
+            <div class="galeria-card">
+                <img src="img/DSC05062.JPG" alt="galeria 6" class="galeria-imagem">
+                <div class="caixa-textos-galeria">
+                    <h3 class="info-galeria">???</h3>
+                    <p class="paragrafo-galeria">Vou nem tentar explicar...</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">FALE CONOSCO</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarInsta(event)">
+
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar <i class="ti ti-brand-instagram"></i></button>
+
+        </form>
+    </section>
+
+    <section id="confra" class="contatos">
+        <h2 class="contatos-titulo">DOE R$1,00 PRA CONFRATERNIZAÇÃO</h2>
+
+        <form class="formulario-contato" onsubmit="doar(event)">
+
+
+            <button type="submit" class="botao-form">
+                Copiar chave PIX <i style="font-size: 16px;" class="ti ti-cash-banknote-move"></i>
+            </button>
+
+        </form>
+    </section>
+
+
+   <footer class="footer">
+    <div class="footer-container">
+        
+        <div class="footer-coluna">
+            <h3 class="footer-titulo">Sobre o Terceirão</h3>
+            <p class="footer-descricao">
+                A 4ª turma de Informática para Internet, se o assunto da aula é resenha, nossa menção é MB.
+            </p>
+        </div>
+
+        <div class="footer-coluna">
+            <h3 class="footer-titulo">Seções</h3>
+            <ul class="footer-links">
+                <li><a href="#inicio">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#galeria">Fotos</a></li>
+                <li><a href="#contatos">Contato</a></li>
+                <li><a href="#confra">Doação</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-coluna">
+            <h3 class="footer-titulo">Nos Acompanhe</h3>
+            <ul class="footer-links">
+<li><a href="https://instagram.com/terceiro.info26" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-instagram"></i> Instagram</a></li>            </ul>
+        </div>
+        
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-copy">
+            <img src="img/Bandeira.png" alt="Bandeira Terceirão" class="img-circular">
+            <h3>3°INFONET</h3>
+        </div>
+        <p class="footer-texto-baixo">Todos os direitos reservados</p>
+    </div>
+</footer>
+
+
+
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
